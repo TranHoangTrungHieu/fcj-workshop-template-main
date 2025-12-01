@@ -1,64 +1,50 @@
 ---
 title: "Week 6 Worklog"
-date: "2025-10-14T19:53:52+07:00"
 weight: 6
 chapter: false
-pre: "<b> 1.6. </b>"
+pre: "<b>1.6.</b>"
 ---
 
-## Week 6 Objectives
-- Understand database services: RDS, Aurora, DynamoDB.
-- Learn ETL processing using AWS Glue.
-- Analyze data using Athena.
-- Visualize data with QuickSight.
-- Explore data streaming with Kinesis.
-
----
-
-## Tasks Completed
-
-| Day | Task Description | Start | End | Reference |
-|-----|------------------|-------|-------|-----------|
-| **Monday** | Studied RDS & Aurora fundamentals; launched RDS instance | 10/13/2025 | 10/13/2025 | FCJ Videos 217–228 |
-| **Tuesday** | Migrated data EC2 → RDS MySQL | 10/14/2025 | 10/14/2025 | FCJ Videos 229–246 |
-| **Wednesday** | Learned DynamoDB concepts & CRUD operations | 10/15/2025 | 10/15/2025 | FCJ Videos 247–256 |
-| **Thursday** | Built ETL pipeline using Glue → S3 → Athena | 10/16/2025 | 10/16/2025 | FCJ Videos 257–275 |
-| **Friday** | Visualized datasets using QuickSight dashboards | 10/17/2025 | 10/17/2025 | FCJ Videos 276–296 |
+## 🎯 Week 6 Objectives
+- Understand High Availability architecture.
+- Configure Route53 DNS.
+- Learn AWS Managed Microsoft AD.
+- Build final AWS project.
+- Complete internship documentation.
 
 ---
 
-## Knowledge Gained
+## 📅 Tasks Completed
 
-### 🔸 Relational Databases
-- RDS engines: MySQL, PostgreSQL, MariaDB.
-- Multi-AZ vs Read Replicas.
-- Parameter groups & security groups for DB.
-
-### 🔸 NoSQL – DynamoDB
-- Partition key, Sort key.
-- Read/Write Capacity Units.
-- Global Tables.
-
-### 🔸 ETL & Analytics
-- Glue Crawlers & Jobs.
-- Athena SQL queries on S3 data.
-- Kinesis Data Streams basics.
-
-### 🔸 Visualization
-- Datasets, dashboards, insights in QuickSight.
+| Day | Task Description | Reference |
+|-----|------------------|-----------|
+| Monday | High Availability architecture (Multi-AZ) | https://aws.amazon.com/architecture/ |
+| Tuesday | Configure Route53 hosted zone & routing | https://youtu.be/0tXUXcUqjKc |
+| Wednesday | AWS Managed Microsoft AD integration | https://aws.amazon.com/directoryservice/ |
+| Thursday | Build final project (EC2 + RDS + S3 + CloudFront + ASG + Route53) | — |
+| Friday | Write final report & presentation slides | — |
 
 ---
 
-## Practical Skills Acquired
-- Launched RDS MySQL and connected via CloudShell/EC2.
-- Performed relational database migration.
-- Created DynamoDB tables & tested CRUD.
-- Built ETL pipeline using Glue.
-- Queried data using Athena & visualized it in QuickSight.
+## 🧠 Knowledge Gained
+- HA vs Fault Tolerance.
+- Multi-AZ design pattern.
+- Enterprise identity integration (Microsoft AD).
+- DNS routing strategies.
 
 ---
 
-## Summary of Week 6
-Week 6 completes the First Cloud Journey training. I learned how AWS handles data storage, migration, processing, analytics, and visualization — key skills for working with modern cloud applications.
+## 🛠 Practical Skills
+- Build full cloud architecture:
+  - EC2
+  - RDS
+  - S3  
+  - CloudFront  
+  - Auto Scaling  
+  - Route53  
+- Prepare technical documentation & presentation.
 
 ---
+
+## ✔️ Week 6 Summary
+This final week combined all AWS skills learned into a complete, production-ready cloud architecture.

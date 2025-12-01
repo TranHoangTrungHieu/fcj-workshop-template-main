@@ -1,67 +1,48 @@
 ---
 title: "Week 2 Worklog"
-date: "2025-09-16T19:53:52+07:00"
 weight: 2
 chapter: false
-pre: "<b> 1.2. </b>"
+pre: "<b>1.2.</b>"
 ---
 
-## Week 2 Objectives
-- Understand AWS Virtual Private Cloud (VPC) concepts and core networking components.
-- Learn how to configure Subnets, Route Tables, Security Groups, and Network ACLs.
-- Practice deploying EC2 instances inside a custom VPC using Public/Private subnets.
-- Explore VPC Peering and inter-VPC connectivity scenarios.
+## 🎯 Week 2 Objectives
+- Understand Amazon EC2.
+- Learn VPC networking fundamentals.
+- Practice Security Groups and NACLs.
+- Use IAM Roles for EC2.
+- Explore Windows workloads & hybrid networking.
 
 ---
 
-## Tasks Completed
+## 📅 Tasks Completed
 
 | Day | Task Description | Start | End | Reference |
-|-----|------------------|--------|--------|-----------|
-| **Monday** | Learned VPC fundamentals: Subnets, CIDR, Route Tables, Security Groups | 09/15/2025 | 09/15/2025 | FCJ Playlist – Videos 25–32 |
-| **Tuesday** | Created a custom VPC, configured Public/Private Subnets & Route Tables | 09/16/2025 | 09/16/2025 | FCJ Playlist – Videos 33–44 |
-| **Wednesday** | Configured IGW, NAT Gateway; launched EC2 in Public/Private Subnets | 09/17/2025 | 09/17/2025 | FCJ Playlist – Videos 45–55 |
-| **Thursday** | Explored DNS, Route53 Resolver; tested EC2 access via IP/Domain | 09/18/2025 | 09/18/2025 | FCJ Playlist – Videos 56–64 |
-| **Friday** | Completed VPC Peering lab between two VPCs and updated Route Tables | 09/19/2025 | 09/19/2025 | FCJ Playlist – Videos 65–71 |
+|-----|------------------|--------|------|-----------|
+| Monday | Launch EC2 Linux, SSH via VSCode | 09/15 | 09/15 | https://youtu.be/ulenjQwU02g |
+| Tuesday | IAM Role & Instance Profile for EC2 | 09/16 | 09/16 | https://youtu.be/5xlKPzAwiZA |
+| Wednesday | Create VPC, Subnet, Routing, IGW | 09/17 | 09/17 | https://youtu.be/OKc2V0tVQqY |
+| Thursday | Security Groups & NACLs | 09/18 | 09/18 | https://youtu.be/QVLnEjtF1Fo |
+| Friday | Windows EC2 + AD Overview | 09/19 | 09/19 | https://aws.amazon.com/windows/ |
 
 ---
 
-## Knowledge Gained
-
-### 🔸 AWS VPC & Networking
-- Concept of VPC and how AWS organizes virtual networks.
-- Understanding CIDR blocks and Public/Private subnet designs.
-- How Internet Gateway (IGW) and NAT Gateway work.
-- Routing logic via Route Tables.
-
-### 🔸 Security Groups & Network ACLs
-- **Security Groups:** Stateful firewalls that automatically allow response traffic.
-- **Network ACLs:** Stateless rules that apply at the subnet level.
-- When to use SGs vs. NACLs.
-
-### 🔸 DNS & Name Resolution
-- Route53 Resolver basics.
-- Creating A and CNAME records.
-- How DNS resolves private IPs for EC2 instances inside a VPC.
-
-### 🔸 VPC Peering
-- Connecting two VPCs within the same or different Regions.
-- Limitations such as non-transitive routing and overlapping CIDR blocks.
-- Updating Route Tables to enable cross-VPC communication.
+## 🧠 Knowledge Gained
+- EC2 provisioning, AMIs and EBS storage.
+- VPC architecture: subnets, routing, gateways.
+- Comparison between SGs and NACLs.
+- IAM Role assignment best practices.
+- Windows Server workloads on AWS.
 
 ---
 
-## Practical Skills Acquired
-- Created a production-style VPC with Public and Private Subnets.
-- Configured Route Tables, IGW, and NAT Gateway.
-- Launched EC2 instances in both Public and Private Subnets.
-- Enabled Internet access for Private EC2 through NAT Gateway.
-- Built VPC Peering connections and verified EC2-to-EC2 communication.
-- Validated routing paths using `ping`, `curl`, and `traceroute`.
+## 🛠 Practical Skills
+- SSH into EC2 using key pair.
+- Create custom VPC manually.
+- Assign IAM Role to EC2.
+- RDP into Windows EC2 instance.
+- Test traffic flow through SG & NACL.
 
 ---
 
-## Summary of Week 2
-Week 2 provided a solid understanding of AWS VPC networking, enabling the setup of secure and scalable cloud network infrastructure. This foundational knowledge prepares me for Week 3, where I will work on EC2 Compute, Auto Scaling, and S3/CloudFront deployment.
-
----
+## ✔️ Week 2 Summary
+This week built a deep understanding of AWS Compute and Networking, key foundations for any cloud infrastructure.

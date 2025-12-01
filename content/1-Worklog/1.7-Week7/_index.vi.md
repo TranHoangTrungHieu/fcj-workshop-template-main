@@ -1,59 +1,47 @@
 ---
-title: "Worklog Tuần 7"
-date: "2025-09-09T19:53:52+07:00"
+title: "Nhật ký tuần 7"
 weight: 7
 chapter: false
-pre: " <b> 1.7. </b> "
+pre: "<b>1.7.</b>"
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## 🎯 Mục tiêu tuần 7
+- Phân tích yêu cầu hệ thống Aurora Calendar.
+- Học cơ chế triển khai frontend với AWS Amplify.
+- Tìm hiểu Cognito: User Pool, JWT Token, Auth Flow.
+- Làm quen API Gateway HTTP API.
+- Lên bản kiến trúc tổng thể cho dự án.
 
-### Mục tiêu tuần 7:
+---
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+## 📅 Công việc đã thực hiện
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Nội dung công việc | Tài liệu |
+|------|---------------------|----------|
+| **Thứ 2** | Xác định phạm vi dự án, chức năng chính, user stories | — |
+| **Thứ 3** | Nghiên cứu Amplify Hosting & quy trình build | https://docs.amplify.aws |
+| **Thứ 4** | Tìm hiểu Cognito (đăng ký, đăng nhập, token) | https://youtu.be/LG2-lUyJp4M |
+| **Thứ 5** | Tìm hiểu API Gateway HTTP API + authorizer | https://youtu.be/8rj8k0qQCo0 |
+| **Thứ 6** | Phác thảo kiến trúc hệ thống Aurora (v1) | — |
 
+---
 
-### Kết quả đạt được tuần 7:
+## 🧠 Kiến thức tiếp thu
+- Kiến trúc xác thực dựa trên JWT.
+- Cách Amplify build & deploy frontend.
+- Cách Cognito cấp token ID/Access/Refresh.
+- Nguyên lý hoạt động của API Gateway.
+- Phác thảo được kiến trúc serverless cho Aurora.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+---
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+## 🛠 Kỹ năng thực hành
+- Triển khai website qua Amplify.
+- Tạo User Pool & cấu hình Hosted UI.
+- Kết nối Amplify → Cognito → API Gateway.
+- Thiết kế kiến trúc tổng quan.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+---
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+## ✔️ Tổng kết tuần 7
+Tuần này đặt nền móng cho dự án: hoàn thiện kiến trúc authentication và hosting frontend.

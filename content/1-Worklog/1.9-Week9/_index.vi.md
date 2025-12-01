@@ -1,59 +1,45 @@
 ---
-title: "Worklog Tuần 9"
-date: "2025-09-09T19:53:52+07:00"
+title: "Nhật ký tuần 9"
 weight: 9
 chapter: false
-pre: " <b> 1.9. </b> "
+pre: "<b>1.9.</b>"
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+## 🎯 Mục tiêu tuần 9
+- Tích hợp logging vào ứng dụng.
+- Học CloudWatch Logs & Metrics.
+- Theo dõi và phân tích hiệu năng Lambda.
+- Debug API sâu hơn.
 
-### Mục tiêu tuần 9:
+---
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+## 📅 Công việc đã thực hiện
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Nội dung công việc | Tài liệu |
+|------|---------------------|----------|
+| **Thứ 2** | Tìm hiểu CloudWatch Logs | https://youtu.be/I0lZt9CYyW8 |
+| **Thứ 3** | Viết log dạng JSON cho Lambda | — |
+| **Thứ 4** | Tạo Metric Filters & Alarms | https://youtu.be/vn2-HTfyhV8 |
+| **Thứ 5** | Debug API bằng CloudWatch Insights | — |
+| **Thứ 6** | Tối ưu hiệu năng & cold start | — |
 
+---
 
-### Kết quả đạt được tuần 9:
+## 🧠 Kiến thức tiếp thu
+- Logging best practices.
+- Thành phần CloudWatch: Logs, Metrics, Alarms.
+- Quan sát hiệu năng Lambda.
+- Cách đọc và phân tích log.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+---
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+## 🛠 Kỹ năng thực hành
+- Tạo metric custom.
+- Theo dõi lỗi API Gateway.
+- Debug thực tế qua CloudWatch Insights.
+- Giảm cold start Lambda.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+---
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+## ✔️ Tổng kết tuần 9
+Tăng mạnh độ ổn định cho hệ thống Aurora thông qua logging và monitoring.

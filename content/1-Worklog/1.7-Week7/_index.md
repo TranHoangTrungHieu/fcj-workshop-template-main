@@ -1,59 +1,47 @@
 ---
 title: "Week 7 Worklog"
-date: "2025-09-09T19:53:52+07:00"
 weight: 7
 chapter: false
-pre: " <b> 1.7. </b> "
+pre: "<b>1.7.</b>"
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+## 🎯 Week 7 Objectives
+- Research application requirements for Aurora Calendar.
+- Study Amplify Hosting and authentication flows.
+- Learn Cognito User Pools & JWT tokens.
+- Learn API Gateway HTTP APIs for serverless backend.
+- Start drafting the full system architecture.
 
-### Week 7 Objectives:
+---
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+## 📅 Tasks Completed
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                             | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| MON | - | 09/08/2025 | 09/08/2025 | <> |
-| TUE | - | 09/09/2025 | 09/09/2025 | <> |
-| WED | - | 09/10/2025 | 09/10/2025 | <> |
-| THU | - | 09/11/2025 | 09/11/2025 | <> |
-| FRI | - | 09/12/2025 | 09/12/2025 | <> |
-| SAT | - | 09/13/2025 | 09/13/2025 | <> |
-| SUN | - | 09/14/2025 | 09/14/2025 | <> |
+| Day | Task Description | Reference |
+|-----|------------------|-----------|
+| Monday | Define Aurora project scope, user stories, and core features | — |
+| Tuesday | Study AWS Amplify Hosting, frontend deployment workflow | https://docs.amplify.aws |
+| Wednesday | Learn Cognito (signup, signin, refresh token, secure API) | https://youtu.be/LG2-lUyJp4M |
+| Thursday | Learn API Gateway HTTP APIs + authorizer | https://youtu.be/8rj8k0qQCo0 |
+| Friday | Create initial system architecture diagram (v1) | — |
 
+---
 
-### Week 7 Achievements:
+## 🧠 Knowledge Gained
+- Authentication vs Authorization.
+- Cognito JWT-based authentication flow.
+- IAM-based API authorization.
+- Amplify build pipeline.
+- High-level serverless architecture design.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+---
 
-* Successfully created and configured an AWS Free Tier account.
+## 🛠 Practical Skills
+- Deploy frontend with Amplify Console.
+- Use Cognito Hosted UI.
+- Create User Pools.
+- Connect Amplify → API Gateway.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+---
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+## ✔️ Week 7 Summary
+A strong foundation for Aurora Calendar's authentication and frontend hosting was established this week.

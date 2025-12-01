@@ -1,68 +1,48 @@
 ---
 title: "Nhật ký tuần 2"
-date: "2025-09-16T19:53:52+07:00"
 weight: 2
 chapter: false
-pre: "<b>1.2. </b>"
+pre: "<b>1.2.</b>"
 ---
 
-
-## Mục tiêu của tuần 2
-- Hiểu mô hình mạng ảo VPC và các thành phần liên quan.
-- Nắm được cách cấu hình Subnet, Route Table, Security Group, NACL.
-- Thực hành triển khai EC2 trong VPC riêng, kết nối Internet qua IGW/NAT.
-- Làm quen với VPC Peering và các kiểu kết nối mạng giữa các VPC.
+## 🎯 Mục tiêu của tuần 2
+- Hiểu sâu về EC2.
+- Nắm kiến trúc VPC.
+- Security Group, NACL.
+- IAM Role gán vào EC2.
+- Windows Workloads, Hybrid networking.
 
 ---
 
-## Công việc đã thực hiện
+## 📅 Công việc đã thực hiện
 
 | Ngày | Nội dung công việc | Bắt đầu | Kết thúc | Tài liệu tham khảo |
 |------|---------------------|----------|----------|--------------------|
-| **Thứ 2** | Tìm hiểu tổng quan VPC, Subnet, CIDR, Route Table, Security Group | 09/15/2025 | 09/15/2025 | Video 25–32 (FCJ Playlist) |
-| **Thứ 3** | Thực hành tạo VPC mới, chia Subnet Public/Private, tạo Route Table | 09/16/2025 | 09/16/2025 | Video 33–44 |
-| **Thứ 4** | Cấu hình Internet Gateway, NAT Gateway, chạy EC2 trong Public/Private | 09/17/2025 | 09/17/2025 | Video 45–55 |
-| **Thứ 5** | Tìm hiểu DNS, Route53 Resolver, thử truy cập EC2 qua IP/Domain | 09/18/2025 | 09/18/2025 | Video 56–64 |
-| **Thứ 6** | Làm bài lab VPC Peering giữa 2 VPC, cấu hình Route Table để 2 VPC giao tiếp | 09/19/2025 | 09/19/2025 | Video 65–71 |
+| **Thứ 2** | Tạo EC2 Linux, SSH từ VSCode | 09/15 | 09/15 | https://youtu.be/ulenjQwU02g |
+| **Thứ 3** | IAM Role & Instance Profile cho EC2 | 09/16 | 09/16 | https://youtu.be/5xlKPzAwiZA |
+| **Thứ 4** | Tạo VPC, Subnet, Route Table, IGW | 09/17 | 09/17 | https://youtu.be/OKc2V0tVQqY |
+| **Thứ 5** | Security Groups & NACL | 09/18 | 09/18 | https://youtu.be/QVLnEjtF1Fo |
+| **Thứ 6** | Windows EC2 + AD overview | 09/19 | 09/19 | https://aws.amazon.com/windows/ |
 
 ---
 
-## Kiến thức tiếp thu được
-
-### 🔸 VPC & Mạng ảo AWS
-- Khái niệm VPC và cách AWS tổ chức mạng ảo.
-- Ý nghĩa của CIDR, Subnet Public / Private.
-- Cách thức Internet Gateway và NAT Gateway hoạt động.
-- Cơ chế định tuyến trong Route Table.
-
-### 🔸 Bảo mật mạng: SG & NACL
-- Security Group: Stateful Firewall, cho phép theo chiều request/response.
-- Network ACL: Stateless, áp dụng theo Subnet.
-- Khi nào dùng SG, khi nào dùng NACL.
-
-### 🔸 DNS & Routing nâng cao
-- Route53 Resolver
-- Tạo A Record, CNAME
-- Cách DNS phân giải IP cho EC2 trong Private subnet
-
-### 🔸 VPC Peering
-- Kết nối 2 VPC trong cùng/khác Region
-- Các trường hợp không hỗ trợ: Transit, Overlapping CIDR
-- Cập nhật Route Table để các VPC giao tiếp được
+## 🧠 Kiến thức tiếp thu được
+- EC2 launch process, AMI, EBS.
+- Lưu lượng vào/ra trong VPC.
+- Public/Private subnet & routing.
+- IAM Role cho EC2 (S3 Access).
+- Windows workloads căn bản.
 
 ---
 
-## Kỹ năng thực hành đạt được
-- Tạo VPC chuẩn AWS với Subnet Public/Private.
-- Cấu hình Route Table + Internet Gateway + NAT Gateway.
-- Khởi chạy EC2 trong Public subnet và SSH vào máy.
-- Khởi chạy EC2 trong Private subnet và truy cập Internet thông qua NAT.
-- Thiết lập VPC Peering và kiểm tra kết nối 2 EC2 ở 2 VPC.
-- Kiểm tra đường đi mạng với `ping`, `curl`, `traceroute`.
+## 🛠 Kỹ năng thực hành
+- SSH bằng keypair.
+- Tạo VPC thủ công.
+- Gán IAM Role vào EC2.
+- RDP vào Windows Instance.
+- Kiểm tra traffic qua SG & NACL.
 
 ---
 
-## Tổng kết tuần 2
-Tuần 2 giúp em hiểu rõ cách AWS xây dựng mạng ảo VPC, từ đó có thể triển khai EC2 đúng chuẩn doanh nghiệp, đảm bảo private subnet an toàn và public subnet có khả năng truy cập Internet khi cần thiết. Đây là nền tảng quan trọng để sang tuần 3 triển khai EC2 nâng cao, Auto Scaling và S3/CloudFront.
-
----
+## ✔️ Tổng kết tuần 2
+Tuần này giúp em nắm vững Compute & Networking – nền tảng quan trọng nhất trong AWS.
