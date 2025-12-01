@@ -3,8 +3,9 @@ title: "Nhật ký tuần 3"
 date: "2025-09-23T19:53:52+07:00"
 weight: 3
 chapter: false
-pre: "<b> 1.3. </b>"
+pre: "<b>1.3. </b>"
 ---
+
 
 ## Mục tiêu của tuần 3
 - Hiểu rõ EC2, AMI, Instance Types, EBS và Instance Metadata.

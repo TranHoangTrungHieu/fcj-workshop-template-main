@@ -3,8 +3,9 @@ title: "Nhật ký tuần 4"
 date: "2025-09-30T19:53:52+07:00"
 weight: 4
 chapter: false
-pre: "<b> 1.4. </b>"
+pre: "<b>1.4. </b>"
 ---
+
 
 ## Mục tiêu của tuần 4
 - Tìm hiểu sâu về các dịch vụ lưu trữ AWS: S3, Glacier, EFS, FSx.

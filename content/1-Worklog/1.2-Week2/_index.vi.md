@@ -3,8 +3,9 @@ title: "Nhật ký tuần 2"
 date: "2025-09-16T19:53:52+07:00"
 weight: 2
 chapter: false
-pre: "<b> 1.2. </b>"
+pre: "<b>1.2. </b>"
 ---
+
 
 ## Mục tiêu của tuần 2
 - Hiểu mô hình mạng ảo VPC và các thành phần liên quan.

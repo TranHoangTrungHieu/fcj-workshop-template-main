@@ -3,8 +3,9 @@ title: "Nhật ký tuần 6"
 date: "2025-10-14T19:53:52+07:00"
 weight: 6
 chapter: false
-pre: "<b> 1.6. </b>"
+pre: "<b>1.6. </b>"
 ---
+
 
 ## Mục tiêu của tuần 6
 - Nắm các dịch vụ CSDL: RDS, Aurora, DynamoDB.

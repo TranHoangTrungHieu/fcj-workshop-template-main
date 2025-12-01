@@ -3,8 +3,9 @@ title: "Nhật ký tuần 1"
 date: "2025-09-09T19:53:52+07:00"
 weight: 1
 chapter: false
-pre: "<b> 1.1. </b>"
+pre: "<b>1.1. </b>"
 ---
+
 
 ## Mục tiêu của tuần 1
 - Làm quen với cách làm việc của First Cloud Journey và cách ghi nhật ký học tập.

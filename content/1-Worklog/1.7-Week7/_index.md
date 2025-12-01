@@ -1,7 +1,7 @@
 ---
 title: "Week 7 Worklog"
 date: "2025-09-09T19:53:52+07:00"
-weight: 1
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---

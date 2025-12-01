@@ -3,8 +3,9 @@ title: "Nhật ký tuần 5"
 date: "2025-10-07T19:53:52+07:00"
 weight: 5
 chapter: false
-pre: "<b> 1.5. </b>"
+pre: "<b>1.5. </b>"
 ---
+
 
 ## Mục tiêu của tuần 5
 - Thành thạo IAM: User, Group, Role, Policy.
