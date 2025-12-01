@@ -1,5 +1,5 @@
 ---
-title: "1. Nhật ký công việc"
+title: " Nhật ký công việc"
 date: "2025-09-09T19:53:52+07:00"
 weight: 1
 chapter: true
