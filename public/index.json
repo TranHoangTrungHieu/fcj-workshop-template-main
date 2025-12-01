@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/1-worklog/",
+	"title": "1. Worklog",
+	"tags": [],
+	"description": "",
+	"content": "On this page, you will need to introduce your worklog. How did you complete it? How many weeks did you take to complete the program? What did you do in those weeks?\nTypically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:\nWeek 1: Getting familiar with AWS and basic AWS services\nWeek 2: Doing task A\u0026hellip;\nWeek 3: Doing task B\u0026hellip;\nWeek 4: Doing task C\u0026hellip;\nWeek 5: Doing task D\u0026hellip;\nWeek 6: Doing task E\u0026hellip;\nWeek 7: Doing task G\u0026hellip;\nWeek 8: Doing task H\u0026hellip;\nWeek 9: Doing task I\u0026hellip;\nWeek 10: Doing task L\u0026hellip;\nWeek 11: Doing task M\u0026hellip;\nWeek 12: Doing task N\u0026hellip;\n"
+},
+{
 	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.1-blog1/",
 	"title": "Blog 1",
 	"tags": [],
@@ -271,13 +278,6 @@
 	"tags": [],
 	"description": "",
 	"content": "\r⚠️ Note: The following information is for reference purposes only. Please do not copy verbatim for your own report, including this warning.\nWeek 12 Objectives: Connect and get acquainted with members of First Cloud Journey. Understand basic AWS services, how to use the console \u0026amp; CLI. Tasks to be carried out this week: Day Task Start Date Completion Date Reference Material MON - 09/08/2025 09/08/2025 \u0026lt;\u0026gt; TUE - 09/09/2025 09/09/2025 \u0026lt;\u0026gt; WED - 09/10/2025 09/10/2025 \u0026lt;\u0026gt; THU - 09/11/2025 09/11/2025 \u0026lt;\u0026gt; FRI - 09/12/2025 09/12/2025 \u0026lt;\u0026gt; SAT - 09/13/2025 09/13/2025 \u0026lt;\u0026gt; SUN - 09/14/2025 09/14/2025 \u0026lt;\u0026gt; Week 12 Achievements: Understood what AWS is and mastered the basic service groups:\nCompute Storage Networking Database \u0026hellip; Successfully created and configured an AWS Free Tier account.\nBecame familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.\nInstalled and configured AWS CLI on the computer, including:\nAccess Key Secret Key Default Region \u0026hellip; Used AWS CLI to perform basic operations such as:\nCheck account \u0026amp; configuration information Retrieve the list of regions View EC2 service Create and manage key pairs Check information about running services \u0026hellip; Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.\n\u0026hellip;\n"
-},
-{
-	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/1-worklog/",
-	"title": "Worklog",
-	"tags": [],
-	"description": "",
-	"content": "On this page, you will need to introduce your worklog. How did you complete it? How many weeks did you take to complete the program? What did you do in those weeks?\nTypically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:\nWeek 1: Getting familiar with AWS and basic AWS services\nWeek 2: Doing task A\u0026hellip;\nWeek 3: Doing task B\u0026hellip;\nWeek 4: Doing task C\u0026hellip;\nWeek 5: Doing task D\u0026hellip;\nWeek 6: Doing task E\u0026hellip;\nWeek 7: Doing task G\u0026hellip;\nWeek 8: Doing task H\u0026hellip;\nWeek 9: Doing task I\u0026hellip;\nWeek 10: Doing task L\u0026hellip;\nWeek 11: Doing task M\u0026hellip;\nWeek 12: Doing task N\u0026hellip;\n"
 },
 {
 	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/categories/",

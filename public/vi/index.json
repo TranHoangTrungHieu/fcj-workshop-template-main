@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/1-worklog/",
+	"title": "1. Nhật ký công việc",
+	"tags": [],
+	"description": "",
+	"content": "Trong trang này bạn sẽ cần giới thiệu worklog của bạn như thế nào? Bạn hoàn thành chương trình trong vòng bao nhiêu tuần? Bạn đã làm gì trong các tuần đó?\nThông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:\nTuần 1: Làm quen với AWS và các dịch vụ cơ bản trong AWS\nTuần 2: Làm công việc A\u0026hellip;\nTuần 3: Làm công việc B\u0026hellip;\nTuần 4: Làm công việc C\u0026hellip;\nTuần 5: Làm công việc D\u0026hellip;\nTuần 6: Làm công việc E\u0026hellip;\nTuần 7: Làm công việc G\u0026hellip;\nTuần 8: Làm công việc H\u0026hellip;\nTuần 9: Làm công việc I\u0026hellip;\nTuần 10: Làm công việc L\u0026hellip;\nTuần 11: Làm công việc M\u0026hellip;\nTuần 12: Làm công việc N\u0026hellip;\n"
+},
+{
 	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/",
 	"title": "Báo cáo thực tập",
 	"tags": [],
@@ -264,13 +271,6 @@
 	"tags": [],
 	"description": "",
 	"content": "\r⚠️ Lưu ý: Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng không sao chép nguyên văn cho bài báo cáo của bạn kể cả warning này.\nMục tiêu tuần 11: Kết nối, làm quen với các thành viên trong First Cloud Journey. Hiểu dịch vụ AWS cơ bản, cách dùng console \u0026amp; CLI. Các công việc cần triển khai trong tuần này: Thứ Công việc Ngày bắt đầu Ngày hoàn thành Nguồn tài liệu 2 - Làm quen với các thành viên FCJ - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập 11/08/2025 11/08/2025 3 - Tìm hiểu AWS và các loại dịch vụ + Compute + Storage + Networking + Database + \u0026hellip; 12/08/2025 12/08/2025 https://cloudjourney.awsstudygroup.com/ 4 - Tạo AWS Free Tier account - Tìm hiểu AWS Console \u0026amp; AWS CLI - Thực hành: + Tạo AWS account + Cài AWS CLI \u0026amp; cấu hình + Cách sử dụng AWS CLI 13/08/2025 13/08/2025 https://cloudjourney.awsstudygroup.com/ 5 - Tìm hiểu EC2 cơ bản: + Instance types + AMI + EBS + \u0026hellip; - Các cách remote SSH vào EC2 - Tìm hiểu Elastic IP 14/08/2025 15/08/2025 https://cloudjourney.awsstudygroup.com/ 6 - Thực hành: + Tạo EC2 instance + Kết nối SSH + Gắn EBS volume 15/08/2025 15/08/2025 https://cloudjourney.awsstudygroup.com/ Kết quả đạt được tuần 11: Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:\nCompute Storage Networking Database \u0026hellip; Đã tạo và cấu hình AWS Free Tier account thành công.\nLàm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.\nCài đặt và cấu hình AWS CLI trên máy tính bao gồm:\nAccess Key Secret Key Region mặc định \u0026hellip; Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:\nKiểm tra thông tin tài khoản \u0026amp; cấu hình Lấy danh sách region Xem dịch vụ EC2 Tạo và quản lý key pair Kiểm tra thông tin dịch vụ đang chạy \u0026hellip; Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.\n\u0026hellip;\n"
-},
-{
-	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/1-worklog/",
-	"title": "Nhật ký công việc",
-	"tags": [],
-	"description": "",
-	"content": "Trong trang này bạn sẽ cần giới thiệu worklog của bạn như thế nào? Bạn hoàn thành chương trình trong vòng bao nhiêu tuần? Bạn đã làm gì trong các tuần đó?\nThông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:\nTuần 1: Làm quen với AWS và các dịch vụ cơ bản trong AWS\nTuần 2: Làm công việc A\u0026hellip;\nTuần 3: Làm công việc B\u0026hellip;\nTuần 4: Làm công việc C\u0026hellip;\nTuần 5: Làm công việc D\u0026hellip;\nTuần 6: Làm công việc E\u0026hellip;\nTuần 7: Làm công việc G\u0026hellip;\nTuần 8: Làm công việc H\u0026hellip;\nTuần 9: Làm công việc I\u0026hellip;\nTuần 10: Làm công việc L\u0026hellip;\nTuần 11: Làm công việc M\u0026hellip;\nTuần 12: Làm công việc N\u0026hellip;\n"
 },
 {
 	"uri": "https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/1-worklog/1.12-week12/",

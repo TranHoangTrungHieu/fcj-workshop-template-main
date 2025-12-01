@@ -1,10 +1,11 @@
 ---
-title: "Worklog"
+title: "1. Worklog"
 date: "2025-09-09T19:53:52+07:00"
-weight: 12
-chapter: false
-pre: " <b> 1. </b> "
+weight: 1
+chapter: true
+pre: "<b>1.</b> "
 ---
+
 
 
 **On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?

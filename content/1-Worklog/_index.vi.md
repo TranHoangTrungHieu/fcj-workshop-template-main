@@ -1,9 +1,9 @@
 ---
-title: "Nhật ký công việc"
+title: "1. Nhật ký công việc"
 date: "2025-09-09T19:53:52+07:00"
-weight: 12
-chapter: false
-pre: " <b> 1. </b> "
+weight: 1
+chapter: true
+pre: "<b>1.</b> "
 ---
 
 
