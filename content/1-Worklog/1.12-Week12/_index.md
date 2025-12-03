@@ -17,7 +17,7 @@ pre: "<b>1.12.</b>"
 ## 📅 Tasks Completed
 
 | Day | Task Description | Reference |
-|-----|------------------|-----------|
+|-----|------------------|-----------|5e
 | Monday | Full application testing (Frontend + API + Email) | — |
 | Tuesday | Performance checks & CloudWatch tracing | — |
 | Wednesday | Write Project Proposal | — |
