@@ -28,71 +28,6 @@
                 href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.1-blog1/"
                 />
   </url><url>
-    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.2-blog2/</loc>
-    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.2-blog2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.2-blog2/"
-                />
-  </url><url>
-    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.3-blog3/</loc>
-    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.3-blog3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.3-blog3/"
-                />
-  </url><url>
-    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.4-blog4/</loc>
-    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.4-blog4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.4-blog4/"
-                />
-  </url><url>
-    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.5-blog5/</loc>
-    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.5-blog5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.5-blog5/"
-                />
-  </url><url>
-    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.6-blog6/</loc>
-    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.6-blog6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.6-blog6/"
-                />
-  </url><url>
     <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/5-workshop/5.3-s3-vpc/5.3.1-create-gwe/</loc>
     <lastmod>2025-09-09T19:53:52+07:00</lastmod>
     <xhtml:link
@@ -260,6 +195,19 @@
                 href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/5-workshop/5.3-s3-vpc/"
                 />
   </url><url>
+    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.2-blog2/</loc>
+    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.2-blog2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.2-blog2/"
+                />
+  </url><url>
     <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/5-workshop/5.4-s3-onprem/5.4.3-test-endpoint/</loc>
     <lastmod>2025-09-09T19:53:52+07:00</lastmod>
     <xhtml:link
@@ -309,6 +257,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/5-workshop/5.4-s3-onprem/"
+                />
+  </url><url>
+    <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.3-blog3/</loc>
+    <lastmod>2025-09-09T19:53:52+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/vi/3-blogstranslated/3.3-blog3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/3-blogstranslated/3.3-blog3/"
                 />
   </url><url>
     <loc>https://tranhoangtrunghieu.github.io/fcj-workshop-template-main/4-eventparticipated/</loc>

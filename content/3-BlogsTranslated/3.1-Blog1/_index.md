@@ -5,122 +5,237 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
-
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+# The Importance of Encryption and How AWS Can Help  
+Author: Ken Beer • Published: February 12, 2025  
+Categories: AWS CloudHSM, AWS Key Management Service, AWS Wickr, Security, Identity & Compliance
 
 ---
 
-## Architecture Guidance
+This article has been updated to include new AWS services and features released since the original publication in 2020.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+Encryption is a key component of a defense-in-depth security strategy for protecting your data, workloads, and digital assets. As organizations innovate and build trust with their customers, they must meet critical compliance requirements and strengthen data protection.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+## How and Why Encryption Works
 
-**The solution architecture is now as follows:**
+Encryption uses an algorithm and a key to transform readable data into ciphertext — which can only be decrypted using the correct key.
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+Example:  
+Hello World! → 1c28df2b595b4e30b7b07500963dc7c
 
----
+Strong encryption systems rely on mathematical properties that make ciphertext computationally infeasible to break without the correct key.
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
-
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+Therefore, **protecting and managing encryption keys** is central to every secure encryption solution.
 
 ---
 
-## Technology Choices and Communication Scope
+## Encryption as Part of Your Security Strategy
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+AWS uses the **shared responsibility model**.  
+You control access to your data, while AWS secures the underlying infrastructure.
 
----
+Encryption helps minimize risks such as:
 
-## The Pub/Sub Hub
+- Excessive or misconfigured access  
+- Data exposure during transmission  
+- Unauthorized access at rest  
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+### How secure is AES-256?
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+AWS uses **AES-256**, a government-approved and industry-standard symmetric encryption algorithm.  
+Even with future quantum computers, breaking AES-256 remains computationally infeasible.
 
 ---
 
-## Core Microservice
+# Requirements for an Effective Encryption Solution
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+## 1. Protecting Keys at Rest
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+A strong encryption solution must ensure that:
+
+- Keys never exist in plaintext outside a protected boundary  
+- Algorithms are implemented correctly and securely  
+
+AWS uses **HSMs (Hardware Security Modules)** with:
+
+- Tamper detection and tamper response  
+- FIPS 140-2/140-3 Level 3 validation  
+
+### Two AWS HSM-based services:
+
+| Service | Description |
+|--------|-------------|
+| **AWS KMS** | AWS manages HSM clusters for you |
+| **AWS CloudHSM** | You manage your own HSMs |
+
+Both support:
+
+- Creating keys  
+- Importing keys from on-premises systems  
+- Direct encryption or envelope encryption  
+
+### Envelope Encryption
+
+A data encryption key (DEK) encrypts your data →  
+DEK is then encrypted using a master key stored in HSM →  
+Improves performance and reduces load on HSMs.
 
 ---
 
-## Front Door Microservice
+## 2. Independent Key Management
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+You must separate:
 
----
+- Key administrators  
+- Data access administrators  
 
-## Staging ER7 Microservice
+AWS KMS provides:
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+- Fine-grained IAM policy control  
+- Key usage tracking via CloudTrail  
+
+AWS CloudHSM provides fully independent key access policies.
 
 ---
 
-## New Features in the Solution
+# External Key Store (XKS)
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Since 2022, AWS KMS allows customers to store KMS keys in **their own HSMs** (on-premises or chosen locations).
+
+KMS proxies encryption/decryption requests to your HSM.  
+The key material **never leaves your HSM**.
+
+However, you become responsible for:
+
+- Durability  
+- Availability  
+- Latency  
+- Throughput  
+
+Losing the key means **permanent loss of data**.
+
+---
+
+# Monitoring and Auditing
+
+- **AWS KMS → CloudTrail**: logs all key usage  
+- **AWS CloudHSM → CloudWatch**: streams audit events  
+
+---
+
+# Encrypting Data at Rest and In Transit
+
+### At Rest  
+AWS services use **AES-256** with master keys protected in HSMs.
+
+### In Transit  
+AWS uses **TLS 1.2 or higher**, with TLS 1.3 recommended.
+
+## s2n-tls
+
+Due to limitations in OpenSSL, AWS created **s2n-tls**:
+
+- Lightweight  
+- Easier to audit  
+- Verified using formal methods  
+- Open-source (Apache 2.0)  
+
+---
+
+# s2n-quic and HTTP/3
+
+AWS built **s2n-quic** in Rust to support QUIC — the foundation of HTTP/3.  
+Amazon CloudFront supports HTTP/3 using s2n-quic.
+
+---
+
+# Certificate Management
+
+AWS simplifies issuing and rotating certificates via:
+
+- AWS Certificate Manager (ACM)  
+- AWS Private CA  
+
+Keys used for certificates are protected via KMS or CloudHSM.
+
+---
+
+# Cryptographic Computing (Encrypting Data in Use)
+
+Used for:
+
+- Federated machine learning  
+- Multi-party computation  
+
+AWS Clean Rooms with **C3R (Cryptographic Computing for Clean Rooms)** enables data collaboration while keeping all data encrypted.
+
+---
+
+# Quantum Computing and Post-Quantum Cryptography (PQC)
+
+Quantum computers may break:
+
+- RSA  
+- ECC  
+- Diffie–Hellman  
+
+But AES-256 remains secure.
+
+### AWS Adoption of PQC
+
+AWS has integrated **ML-KEM**, a NIST-selected PQC algorithm, into:
+
+- AWS-LC (FIPS 140-3 validated library)  
+- s2n-tls  
+- AWS KMS  
+- AWS Certificate Manager  
+- AWS Secrets Manager  
+
+AWS Transfer Family supports **post-quantum hybrid SFTP**.
+
+---
+
+# Encrypt Everything, Everywhere
+
+AWS enables encryption:
+
+- At rest  
+- In transit  
+- In memory  
+
+Examples:
+
+- S3 encrypts new objects by default  
+- EBS uses envelope encryption  
+- Graviton2/3 processors use always-on memory encryption  
+
+As part of the **AWS Digital Sovereignty Pledge**, AWS continues investing in advanced encryption controls.
+
+---
+
+# Conclusion
+
+At AWS, security is the top priority.  
+AWS helps customers control how data is encrypted, managed, and protected across their entire infrastructure.  
+
+AWS provides:
+
+- Strong encryption technologies  
+- Scalable key management  
+- Compliance-ready security controls  
+
+If you have questions, start a thread in the AWS KMS or AWS CloudHSM forums, or contact AWS Support.
+
+---
+
+## Authors
+
+**Ken Beer** – Director of AWS Key Management Service (AWS KMS) and AWS Cryptography Libraries.  
+He has more than seven years of experience at AWS in identity and access management, encryption, and key management.  
+Before joining AWS, he led network security at Trend Micro and previously worked at Tumbleweed Communications.  
+He has presented at RSA Conference, the U.S. DoD PKI User’s Forum, and AWS re:Invent.
+
+**Zach Miller** – Principal Security Specialist Solutions Architect at AWS.  
+He specializes in data protection, security architecture, applied cryptography, and secrets management.  
+He works with AWS enterprise customers to help them strengthen security posture and reduce operational risk.

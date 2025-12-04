@@ -15,21 +15,21 @@
     <title>Blog 1 :: Báo cáo thực tập</title>
 
     
-    <link href="../../../css/nucleus.css?1764729974" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1764729974" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1764729974" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1764729974" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1764729974" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1764729974" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1764729974" rel="stylesheet">
-    <link href="../../../css/theme.css?1764729974" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1764729974" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1764828617" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1764828617" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1764828617" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1764828617" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1764828617" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1764828617" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1764828617" rel="stylesheet">
+    <link href="../../../css/theme.css?1764828617" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1764828617" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1764729974" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1764828617" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1764729974"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1764828617"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1764729974"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1764729974"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1764828617"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1764828617"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/tranhoangtrunghieu.github.io\/fcj-workshop-template-main\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1764729974"></script>
+<script type="text/javascript" src="../../../js/search.js?1764828617"></script>
  
   </div>
 
@@ -421,60 +421,6 @@
 >
   <a href="../../../vi/3-blogstranslated/3.3-blog3/">
      <b> 3.3. </b> Blog 3 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-    
-            
-<li
-  data-nav-id="/vi/3-blogstranslated/3.4-blog4/"
-  title="Blog 4"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="../../../vi/3-blogstranslated/3.4-blog4/">
-     <b> 3.4. </b> Blog 4 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-    
-            
-<li
-  data-nav-id="/vi/3-blogstranslated/3.5-blog5/"
-  title="Blog 5"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="../../../vi/3-blogstranslated/3.5-blog5/">
-     <b> 3.6. </b> Blog 5 
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-   
-</li>
-    
-            
-<li
-  data-nav-id="/vi/3-blogstranslated/3.6-blog6/"
-  title="Blog 6"
-  class="dd-item 
-        
-        
-        
-        "
->
-  <a href="../../../vi/3-blogstranslated/3.6-blog6/">
-     <b> 3.6. </b> Blog 6 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -986,17 +932,44 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#hướng-dẫn-kiến-trúc">Hướng dẫn kiến trúc</a></li>
-    <li><a href="#lựa-chọn-công-nghệ-và-phạm-vi-giao-tiếp">Lựa chọn công nghệ và phạm vi giao tiếp</a></li>
-    <li><a href="#the-pubsub-hub">The pub/sub hub</a></li>
-    <li><a href="#core-microservice">Core microservice</a></li>
-    <li><a href="#front-door-microservice">Front door microservice</a></li>
-    <li><a href="#staging-er7-microservice">Staging ER7 microservice</a></li>
-    <li><a href="#tính-năng-mới-trong-giải-pháp">Tính năng mới trong giải pháp</a>
+    <li><a href="#cách-thức-và-lý-do-mã-hóa-hoạt-động">Cách thức và lý do mã hóa hoạt động</a></li>
+    <li><a href="#mã-hóa-trong-chiến-lược-bảo-mật">Mã hóa trong chiến lược bảo mật</a>
       <ul>
-        <li><a href="#1-aws-cloudformation-cross-stack-references">1. AWS CloudFormation cross-stack references</a></li>
+        <li><a href="#aes-256-an-toàn-như-thế-nào">AES-256 an toàn như thế nào?</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-bảo-vệ-khóa-khi-lưu-trữ-protecting-keys-at-rest">1. Bảo vệ khóa khi lưu trữ (Protecting keys at rest)</a>
+      <ul>
+        <li><a href="#hai-dịch-vụ-hsm-của-aws">Hai dịch vụ HSM của AWS:</a></li>
+        <li><a href="#envelope-encryption">Envelope Encryption</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-quản-lý-khóa-độc-lập-independent-key-management">2. Quản lý khóa độc lập (Independent key management)</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#at-rest">At rest</a></li>
+        <li><a href="#in-transit">In transit</a></li>
+      </ul>
+    </li>
+    <li><a href="#s2n-tls">s2n-tls</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#aws-triển-khai-pqc">AWS triển khai PQC:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#tác-giả">Tác giả</a></li>
   </ul>
 </nav></div>
 </div>
@@ -1021,136 +994,172 @@
 
 
 
-	
-<div
-  class="notices warning"
-  
->
-  <p>⚠️ <strong>Lưu ý:</strong> Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng <strong>không sao chép nguyên văn</strong> cho bài báo cáo của bạn kể cả warning này.</p>
-
-</div>
-
-<h1 id="bắt-đầu-với-healthcare-data-lakes-sử-dụng-microservices">Bắt đầu với healthcare data lakes: Sử dụng microservices</h1>
-<p>Các data lake có thể giúp các bệnh viện và cơ sở y tế chuyển dữ liệu thành những thông tin chi tiết về doanh nghiệp và duy trì hoạt động kinh doanh liên tục, đồng thời bảo vệ quyền riêng tư của bệnh nhân. <strong>Data lake</strong> là một kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng ban đầu và đã xử lý để phân tích. data lake cho phép bạn chia nhỏ các kho chứa dữ liệu và kết hợp các loại phân tích khác nhau để có được thông tin chi tiết và đưa ra các quyết định kinh doanh tốt hơn.</p>
-<p>Bài đăng trên blog này là một phần của loạt bài lớn hơn về việc bắt đầu cài đặt data lake dành cho lĩnh vực y tế. Trong bài đăng blog cuối cùng của tôi trong loạt bài, <em>“Bắt đầu với data lake dành cho lĩnh vực y tế: Đào sâu vào Amazon Cognito”</em>, tôi tập trung vào các chi tiết cụ thể của việc sử dụng Amazon Cognito và Attribute Based Access Control (ABAC) để xác thực và ủy quyền người dùng trong giải pháp data lake y tế. Trong blog này, tôi trình bày chi tiết cách giải pháp đã phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các code samples cho giải pháp tại Git repo này để tham khảo.</p>
+	<h1 id="tầm-quan-trọng-của-mã-hóa-và-cách-aws-có-thể-hỗ-trợ">Tầm quan trọng của mã hóa và cách AWS có thể hỗ trợ</h1>
+<p>Tác giả: Ken Beer • Ngày đăng: 12 tháng 2, 2025<br>
+Danh mục: AWS CloudHSM, AWS KMS, AWS Wickr, Security, Identity &amp; Compliance</p>
 <hr>
-<h2 id="hướng-dẫn-kiến-trúc">Hướng dẫn kiến trúc</h2>
-<p>Thay đổi chính kể từ lần trình bày cuối cùng của kiến trúc tổng thể là việc tách dịch vụ đơn lẻ thành một tập hợp các dịch vụ nhỏ để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một lượng lớn dữ liệu y tế khác nhau thường yêu cầu các trình kết nối chuyên biệt cho từng định dạng; bằng cách giữ chúng được đóng gói riêng biệt với microservices, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến những kết nối khác. Các microservices được kết nối rời thông qua tin nhắn publish/subscribe tập trung trong cái mà tôi gọi là “pub/sub hub”.</p>
-<p>Giải pháp này đại diện cho những gì tôi sẽ coi là một lần lặp nước rút hợp lý khác từ last post của tôi. Phạm vi vẫn được giới hạn trong việc nhập và phân tích cú pháp đơn giản của các <strong>HL7v2 messages</strong> được định dạng theo <strong>Quy tắc mã hóa 7 (ER7)</strong> thông qua giao diện REST.</p>
-<p><strong>Kiến trúc giải pháp bây giờ như sau:</strong></p>
-<blockquote>
-<p><em>Hình 1. Kiến trúc tổng thể; những ô màu thể hiện những dịch vụ riêng biệt.</em></p></blockquote>
+<p>Bài viết được cập nhật để bao gồm các dịch vụ và tính năng mới ra mắt từ sau bản gốc năm 2020.</p>
+<p>Mã hóa (encryption) là một phần quan trọng trong chiến lược bảo mật defense-in-depth nhằm bảo vệ dữ liệu, khối lượng công việc và tài sản số. Khi tổ chức đổi mới và xây dựng lòng tin với khách hàng, họ cần đáp ứng yêu cầu tuân thủ và tăng cường bảo mật dữ liệu.</p>
+<h2 id="cách-thức-và-lý-do-mã-hóa-hoạt-động">Cách thức và lý do mã hóa hoạt động</h2>
+<p>Mã hóa sử dụng thuật toán và khóa để biến dữ liệu có thể đọc được thành ciphertext — chỉ có thể giải mã bằng khóa phù hợp.</p>
+<p>Ví dụ:<br>
+Hello World! → 1c28df2b595b4e30b7b07500963dc7c</p>
+<p>Các hệ thống mã hóa mạnh phụ thuộc vào tính toán học và đảm bảo ciphertext không thể giải được bằng năng lực tính toán hiện tại nếu không có khóa.</p>
+<p>Do đó, bảo vệ và quản lý khóa là trung tâm của mọi giải pháp mã hóa.</p>
 <hr>
-<p>Mặc dù thuật ngữ <em>microservices</em> có một số sự mơ hồ cố hữu, một số đặc điểm là chung:</p>
+<h2 id="mã-hóa-trong-chiến-lược-bảo-mật">Mã hóa trong chiến lược bảo mật</h2>
+<p>AWS áp dụng mô hình shared responsibility.<br>
+Bạn kiểm soát quyền truy cập dữ liệu, còn AWS đảm bảo hạ tầng bảo mật bên dưới.</p>
+<p>Mã hóa giúp giảm thiểu rủi ro khi:</p>
 <ul>
-<li>Chúng nhỏ, tự chủ, kết hợp rời rạc</li>
-<li>Có thể tái sử dụng, giao tiếp thông qua giao diện được xác định rõ</li>
-<li>Chuyên biệt để giải quyết một việc</li>
-<li>Thường được triển khai trong <strong>event-driven architecture</strong></li>
+<li>Lộ quyền truy cập</li>
+<li>Lỗi cấu hình</li>
+<li>Nghe lén khi truyền dữ liệu</li>
 </ul>
-<p>Khi xác định vị trí tạo ranh giới giữa các microservices, cần cân nhắc:</p>
-<ul>
-<li><strong>Nội tại</strong>: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng</li>
-<li><strong>Bên ngoài</strong>: chức năng phụ thuộc, tần suất thay đổi, khả năng tái sử dụng</li>
-<li><strong>Con người</strong>: quyền sở hữu nhóm, quản lý <em>cognitive load</em></li>
-</ul>
+<h3 id="aes-256-an-toàn-như-thế-nào">AES-256 an toàn như thế nào?</h3>
+<p>AWS sử dụng AES-256, tiêu chuẩn mạnh nhất được chính phủ phê duyệt.<br>
+Ngay cả với máy tính lượng tử trong tương lai gần, phá AES-256 vẫn bất khả thi.</p>
 <hr>
-<h2 id="lựa-chọn-công-nghệ-và-phạm-vi-giao-tiếp">Lựa chọn công nghệ và phạm vi giao tiếp</h2>
+<h1 id="yêu-cầu-của-một-giải-pháp-mã-hóa-hiệu-quả">Yêu cầu của một giải pháp mã hóa hiệu quả</h1>
+<h2 id="1-bảo-vệ-khóa-khi-lưu-trữ-protecting-keys-at-rest">1. Bảo vệ khóa khi lưu trữ (Protecting keys at rest)</h2>
+<p>Giải pháp tốt cần đảm bảo:</p>
+<ul>
+<li>Khóa không bao giờ tồn tại dưới dạng plaintext ngoài phạm vi an toàn</li>
+<li>Thuật toán mã hóa được triển khai chính xác</li>
+</ul>
+<p>AWS sử dụng HSM – Hardware Security Module với các cơ chế:</p>
+<ul>
+<li>Tamper detection &amp; tamper response</li>
+<li>Chứng nhận FIPS 140-2/3 Level 3</li>
+</ul>
+<h3 id="hai-dịch-vụ-hsm-của-aws">Hai dịch vụ HSM của AWS:</h3>
 <table>
   <thead>
       <tr>
-          <th>Phạm vi giao tiếp</th>
-          <th>Các công nghệ / mô hình cần xem xét</th>
+          <th>Dịch vụ</th>
+          <th>Đặc điểm</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Trong một microservice</td>
-          <td>Amazon Simple Queue Service (Amazon SQS), AWS Step Functions</td>
+          <td>AWS KMS</td>
+          <td>AWS quản lý toàn bộ cụm HSM</td>
       </tr>
       <tr>
-          <td>Giữa các microservices trong một dịch vụ</td>
-          <td>AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS)</td>
-      </tr>
-      <tr>
-          <td>Giữa các dịch vụ</td>
-          <td>Amazon EventBridge, AWS Cloud Map, Amazon API Gateway</td>
+          <td>AWS CloudHSM</td>
+          <td>Bạn tự quản lý HSM riêng</td>
       </tr>
   </tbody>
 </table>
-<hr>
-<h2 id="the-pubsub-hub">The pub/sub hub</h2>
-<p>Việc sử dụng kiến trúc <strong>hub-and-spoke</strong> (hay message broker) hoạt động tốt với một số lượng nhỏ các microservices liên quan chặt chẽ.</p>
+<p>Cả hai dịch vụ hỗ trợ:</p>
 <ul>
-<li>Mỗi microservice chỉ phụ thuộc vào <em>hub</em></li>
-<li>Kết nối giữa các microservice chỉ giới hạn ở nội dung của message được xuất</li>
-<li>Giảm số lượng synchronous calls vì pub/sub là <em>push</em> không đồng bộ một chiều</li>
+<li>Tạo khóa</li>
+<li>Nhập khóa từ on-premises</li>
+<li>Mã hóa trực tiếp hoặc mã hóa theo lớp (envelope encryption)</li>
 </ul>
-<p>Nhược điểm: cần <strong>phối hợp và giám sát</strong> để tránh microservice xử lý nhầm message.</p>
+<h3 id="envelope-encryption">Envelope Encryption</h3>
+<p>Khóa dữ liệu (DEK) mã hóa dữ liệu → DEK được mã hóa lại bằng master key trong HSM → tăng hiệu năng và giảm tải cho HSM.</p>
 <hr>
-<h2 id="core-microservice">Core microservice</h2>
-<p>Cung cấp dữ liệu nền tảng và lớp truyền thông, gồm:</p>
+<h2 id="2-quản-lý-khóa-độc-lập-independent-key-management">2. Quản lý khóa độc lập (Independent key management)</h2>
+<p>Bạn cần tách biệt:</p>
 <ul>
-<li><strong>Amazon S3</strong> bucket cho dữ liệu</li>
-<li><strong>Amazon DynamoDB</strong> cho danh mục dữ liệu</li>
-<li><strong>AWS Lambda</strong> để ghi message vào data lake và danh mục</li>
-<li><strong>Amazon SNS</strong> topic làm <em>hub</em></li>
-<li><strong>Amazon S3</strong> bucket cho artifacts như mã Lambda</li>
+<li>Người quản trị khóa</li>
+<li>Người truy cập dữ liệu mã hóa</li>
 </ul>
-<blockquote>
-<p>Chỉ cho phép truy cập ghi gián tiếp vào data lake qua hàm Lambda → đảm bảo nhất quán.</p></blockquote>
-<hr>
-<h2 id="front-door-microservice">Front door microservice</h2>
+<p>AWS KMS hỗ trợ:</p>
 <ul>
-<li>Cung cấp API Gateway để tương tác REST bên ngoài</li>
-<li>Xác thực &amp; ủy quyền dựa trên <strong>OIDC</strong> thông qua <strong>Amazon Cognito</strong></li>
-<li>Cơ chế <em>deduplication</em> tự quản lý bằng DynamoDB thay vì SNS FIFO vì:
-<ol>
-<li>SNS deduplication TTL chỉ 5 phút</li>
-<li>SNS FIFO yêu cầu SQS FIFO</li>
-<li>Chủ động báo cho sender biết message là bản sao</li>
-</ol>
-</li>
+<li>IAM policy phân quyền</li>
+<li>Audit logs qua AWS CloudTrail</li>
 </ul>
+<p>AWS CloudHSM hỗ trợ cơ chế policy độc lập.</p>
 <hr>
-<h2 id="staging-er7-microservice">Staging ER7 microservice</h2>
+<h1 id="external-key-store-xks">External Key Store (XKS)</h1>
+<p>Từ năm 2022, AWS KMS hỗ trợ lưu trữ khóa trên HSM của bạn (on-prem hoặc nơi bạn chọn).<br>
+KMS proxy yêu cầu mã hóa/giải mã đến HSM đó.</p>
+<p>Khóa không bao giờ rời HSM của bạn.</p>
+<p>Nhưng bạn sẽ chịu trách nhiệm:</p>
 <ul>
-<li>Lambda “trigger” đăng ký với pub/sub hub, lọc message theo attribute</li>
-<li>Step Functions Express Workflow để chuyển ER7 → JSON</li>
-<li>Hai Lambda:
-<ol>
-<li>Sửa format ER7 (newline, carriage return)</li>
-<li>Parsing logic</li>
-</ol>
-</li>
-<li>Kết quả hoặc lỗi được đẩy lại vào pub/sub hub</li>
+<li>Tính sẵn sàng</li>
+<li>Độ trễ</li>
+<li>Độ bền</li>
+</ul>
+<p>Nếu mất khóa → mất dữ liệu.</p>
+<hr>
+<h1 id="audit--giám-sát">Audit &amp; giám sát</h1>
+<ul>
+<li>AWS KMS → CloudTrail</li>
+<li>AWS CloudHSM → CloudWatch</li>
 </ul>
 <hr>
-<h2 id="tính-năng-mới-trong-giải-pháp">Tính năng mới trong giải pháp</h2>
-<h3 id="1-aws-cloudformation-cross-stack-references">1. AWS CloudFormation cross-stack references</h3>
-<p>Ví dụ <em>outputs</em> trong core microservice:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">Outputs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Bucket</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Bucket</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Bucket</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ArtifactBucket</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref ArtifactBucket</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-ArtifactBucket</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Topic</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Topic</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Topic</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">Catalog</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">Ref Catalog</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-Catalog</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">CatalogArn</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Value</span>: !<span style="color:#ae81ff">GetAtt Catalog.Arn</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">Export</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">Name</span>: !<span style="color:#ae81ff">Sub ${AWS::StackName}-CatalogArn</span>
-</span></span></code></pre></div>
+<h1 id="mã-hóa-dữ-liệu-khi-lưu-trữ-và-truyền-tải">Mã hóa dữ liệu khi lưu trữ và truyền tải</h1>
+<h3 id="at-rest">At rest</h3>
+<p>Dữ liệu được mã hóa bằng AES-256 trong các dịch vụ AWS, với master key lưu trong HSM.</p>
+<h3 id="in-transit">In transit</h3>
+<p>AWS sử dụng TLS 1.2 hoặc cao hơn; khuyến nghị TLS 1.3.</p>
+<h2 id="s2n-tls">s2n-tls</h2>
+<p>Do hạn chế của OpenSSL, AWS đã phát triển s2n-tls:</p>
+<ul>
+<li>Nhỏ gọn</li>
+<li>Dễ audit</li>
+<li>Kiểm chứng bằng formal methods</li>
+<li>Mã nguồn mở Apache 2.0</li>
+</ul>
+<hr>
+<h1 id="s2n-quic-và-http3">s2n-quic và HTTP/3</h1>
+<p>AWS phát triển s2n-quic bằng Rust cho giao thức QUIC, nền tảng của HTTP/3.<br>
+CloudFront hỗ trợ HTTP/3 dựa trên s2n-quic.</p>
+<hr>
+<h1 id="quản-lý-chứng-chỉ-số">Quản lý chứng chỉ số</h1>
+<p>Hai dịch vụ giúp tự động hóa việc phát hành và xoay vòng certificate:</p>
+<ul>
+<li>AWS Certificate Manager (ACM)</li>
+<li>AWS Private CA</li>
+</ul>
+<p>Khóa certificate được bảo vệ bằng KMS hoặc CloudHSM.</p>
+<hr>
+<h1 id="mã-hóa-dữ-liệu-khi-đang-sử-dụng-cryptographic-computing">Mã hóa dữ liệu khi đang sử dụng (Cryptographic Computing)</h1>
+<p>Ứng dụng trong:</p>
+<ul>
+<li>Federated learning</li>
+<li>Multi-party computation</li>
+</ul>
+<p>AWS Clean Rooms cung cấp tính năng C3R giúp xử lý dữ liệu mã hóa mà không lộ plaintext.</p>
+<hr>
+<h1 id="máy-tính-lượng-tử-và-mật-mã-hậu-lượng-tử-pqc">Máy tính lượng tử và mật mã hậu lượng tử (PQC)</h1>
+<p>Máy tính lượng tử có thể phá vỡ RSA, ECC hoặc Diffie–Hellman.<br>
+Nhưng AES-256 vẫn an toàn.</p>
+<h3 id="aws-triển-khai-pqc">AWS triển khai PQC:</h3>
+<ul>
+<li>ML-KEM (chuẩn NIST PQC) tích hợp vào AWS-LC</li>
+<li>Hỗ trợ PQC trong s2n-tls, KMS, ACM, Secrets Manager</li>
+<li>AWS Transfer Family hỗ trợ PQC SFTP</li>
+</ul>
+<hr>
+<h1 id="mã-hóa-mọi-thứ-ở-mọi-nơi">Mã hóa mọi thứ, ở mọi nơi</h1>
+<p>AWS hỗ trợ mã hóa:</p>
+<ul>
+<li>Khi lưu trữ</li>
+<li>Khi truyền tải</li>
+<li>Trong bộ nhớ</li>
+</ul>
+<p>S3 mã hóa mặc định object mới.<br>
+EBS dùng envelope encryption.<br>
+Graviton2/3 hỗ trợ always-on memory encryption.</p>
+<hr>
+<h1 id="tổng-kết">Tổng kết</h1>
+<p>AWS:</p>
+<ul>
+<li>Ưu tiên bảo mật hàng đầu</li>
+<li>Cung cấp hệ sinh thái mã hóa mạnh mẽ</li>
+<li>Hỗ trợ quản lý khóa linh hoạt</li>
+<li>Chuẩn bị cho tương lai lượng tử</li>
+</ul>
+<p>Bạn có thể tham khảo thêm qua diễn đàn AWS KMS, AWS CloudHSM hoặc liên hệ AWS Support.</p>
+<hr>
+<h2 id="tác-giả">Tác giả</h2>
+<p><strong>Ken Beer</strong> – Giám đốc AWS KMS &amp; Cryptography Libraries.<br>
+<strong>Zach Miller</strong> – Principal Security Specialist Solutions Architect tại AWS.</p>
+
 
 
 
@@ -1454,54 +1463,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1851,19 +1812,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1764729975"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1764729975"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1764729975"></script>
-    <script src="../../../js/jquery.sticky.js?1764729975"></script>
-    <script src="../../../js/featherlight.min.js?1764729975"></script>
-    <script src="../../../js/highlight.pack.js?1764729975"></script>
+    <script src="../../../js/clipboard.min.js?1764828617"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1764828617"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1764828617"></script>
+    <script src="../../../js/jquery.sticky.js?1764828617"></script>
+    <script src="../../../js/featherlight.min.js?1764828617"></script>
+    <script src="../../../js/highlight.pack.js?1764828617"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1764729975"></script>
-    <script src="../../../js/learn.js?1764729975"></script>
-    <script src="../../../js/hugo-learn.js?1764729975"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1764828617"></script>
+    <script src="../../../js/learn.js?1764828617"></script>
+    <script src="../../../js/hugo-learn.js?1764828617"></script>
 
-    <link href="../../../mermaid/mermaid.css?1764729975" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1764729975"></script>
+    <link href="../../../mermaid/mermaid.css?1764828617" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1764828617"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

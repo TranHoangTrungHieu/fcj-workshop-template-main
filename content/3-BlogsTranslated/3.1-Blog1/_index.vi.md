@@ -5,122 +5,211 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bắt đầu với healthcare data lakes: Sử dụng microservices
 
-Các data lake có thể giúp các bệnh viện và cơ sở y tế chuyển dữ liệu thành những thông tin chi tiết về doanh nghiệp và duy trì hoạt động kinh doanh liên tục, đồng thời bảo vệ quyền riêng tư của bệnh nhân. **Data lake** là một kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng ban đầu và đã xử lý để phân tích. data lake cho phép bạn chia nhỏ các kho chứa dữ liệu và kết hợp các loại phân tích khác nhau để có được thông tin chi tiết và đưa ra các quyết định kinh doanh tốt hơn.
-
-Bài đăng trên blog này là một phần của loạt bài lớn hơn về việc bắt đầu cài đặt data lake dành cho lĩnh vực y tế. Trong bài đăng blog cuối cùng của tôi trong loạt bài, *“Bắt đầu với data lake dành cho lĩnh vực y tế: Đào sâu vào Amazon Cognito”*, tôi tập trung vào các chi tiết cụ thể của việc sử dụng Amazon Cognito và Attribute Based Access Control (ABAC) để xác thực và ủy quyền người dùng trong giải pháp data lake y tế. Trong blog này, tôi trình bày chi tiết cách giải pháp đã phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các code samples cho giải pháp tại Git repo này để tham khảo.
+# Tầm quan trọng của mã hóa và cách AWS có thể hỗ trợ  
+Tác giả: Ken Beer • Ngày đăng: 12 tháng 2, 2025  
+Danh mục: AWS CloudHSM, AWS KMS, AWS Wickr, Security, Identity & Compliance
 
 ---
 
-## Hướng dẫn kiến trúc
+Bài viết được cập nhật để bao gồm các dịch vụ và tính năng mới ra mắt từ sau bản gốc năm 2020.
 
-Thay đổi chính kể từ lần trình bày cuối cùng của kiến trúc tổng thể là việc tách dịch vụ đơn lẻ thành một tập hợp các dịch vụ nhỏ để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một lượng lớn dữ liệu y tế khác nhau thường yêu cầu các trình kết nối chuyên biệt cho từng định dạng; bằng cách giữ chúng được đóng gói riêng biệt với microservices, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến những kết nối khác. Các microservices được kết nối rời thông qua tin nhắn publish/subscribe tập trung trong cái mà tôi gọi là “pub/sub hub”.
+Mã hóa (encryption) là một phần quan trọng trong chiến lược bảo mật defense-in-depth nhằm bảo vệ dữ liệu, khối lượng công việc và tài sản số. Khi tổ chức đổi mới và xây dựng lòng tin với khách hàng, họ cần đáp ứng yêu cầu tuân thủ và tăng cường bảo mật dữ liệu.
 
-Giải pháp này đại diện cho những gì tôi sẽ coi là một lần lặp nước rút hợp lý khác từ last post của tôi. Phạm vi vẫn được giới hạn trong việc nhập và phân tích cú pháp đơn giản của các **HL7v2 messages** được định dạng theo **Quy tắc mã hóa 7 (ER7)** thông qua giao diện REST.
+## Cách thức và lý do mã hóa hoạt động
 
-**Kiến trúc giải pháp bây giờ như sau:**
+Mã hóa sử dụng thuật toán và khóa để biến dữ liệu có thể đọc được thành ciphertext — chỉ có thể giải mã bằng khóa phù hợp.
 
-> *Hình 1. Kiến trúc tổng thể; những ô màu thể hiện những dịch vụ riêng biệt.*
+Ví dụ:  
+Hello World! → 1c28df2b595b4e30b7b07500963dc7c
 
----
+Các hệ thống mã hóa mạnh phụ thuộc vào tính toán học và đảm bảo ciphertext không thể giải được bằng năng lực tính toán hiện tại nếu không có khóa.
 
-Mặc dù thuật ngữ *microservices* có một số sự mơ hồ cố hữu, một số đặc điểm là chung:  
-- Chúng nhỏ, tự chủ, kết hợp rời rạc  
-- Có thể tái sử dụng, giao tiếp thông qua giao diện được xác định rõ  
-- Chuyên biệt để giải quyết một việc  
-- Thường được triển khai trong **event-driven architecture**
-
-Khi xác định vị trí tạo ranh giới giữa các microservices, cần cân nhắc:  
-- **Nội tại**: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng  
-- **Bên ngoài**: chức năng phụ thuộc, tần suất thay đổi, khả năng tái sử dụng  
-- **Con người**: quyền sở hữu nhóm, quản lý *cognitive load*
+Do đó, bảo vệ và quản lý khóa là trung tâm của mọi giải pháp mã hóa.
 
 ---
 
-## Lựa chọn công nghệ và phạm vi giao tiếp
+## Mã hóa trong chiến lược bảo mật
 
-| Phạm vi giao tiếp                        | Các công nghệ / mô hình cần xem xét                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Trong một microservice                   | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Giữa các microservices trong một dịch vụ | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Giữa các dịch vụ                         | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+AWS áp dụng mô hình shared responsibility.  
+Bạn kiểm soát quyền truy cập dữ liệu, còn AWS đảm bảo hạ tầng bảo mật bên dưới.
 
----
+Mã hóa giúp giảm thiểu rủi ro khi:
 
-## The pub/sub hub
+- Lộ quyền truy cập  
+- Lỗi cấu hình  
+- Nghe lén khi truyền dữ liệu  
 
-Việc sử dụng kiến trúc **hub-and-spoke** (hay message broker) hoạt động tốt với một số lượng nhỏ các microservices liên quan chặt chẽ.  
-- Mỗi microservice chỉ phụ thuộc vào *hub*  
-- Kết nối giữa các microservice chỉ giới hạn ở nội dung của message được xuất  
-- Giảm số lượng synchronous calls vì pub/sub là *push* không đồng bộ một chiều
+### AES-256 an toàn như thế nào?
 
-Nhược điểm: cần **phối hợp và giám sát** để tránh microservice xử lý nhầm message.
+AWS sử dụng AES-256, tiêu chuẩn mạnh nhất được chính phủ phê duyệt.  
+Ngay cả với máy tính lượng tử trong tương lai gần, phá AES-256 vẫn bất khả thi.
 
 ---
 
-## Core microservice
+# Yêu cầu của một giải pháp mã hóa hiệu quả
 
-Cung cấp dữ liệu nền tảng và lớp truyền thông, gồm:  
-- **Amazon S3** bucket cho dữ liệu  
-- **Amazon DynamoDB** cho danh mục dữ liệu  
-- **AWS Lambda** để ghi message vào data lake và danh mục  
-- **Amazon SNS** topic làm *hub*  
-- **Amazon S3** bucket cho artifacts như mã Lambda
+## 1. Bảo vệ khóa khi lưu trữ (Protecting keys at rest)
 
-> Chỉ cho phép truy cập ghi gián tiếp vào data lake qua hàm Lambda → đảm bảo nhất quán.
+Giải pháp tốt cần đảm bảo:
 
----
+- Khóa không bao giờ tồn tại dưới dạng plaintext ngoài phạm vi an toàn  
+- Thuật toán mã hóa được triển khai chính xác  
 
-## Front door microservice
+AWS sử dụng HSM – Hardware Security Module với các cơ chế:
 
-- Cung cấp API Gateway để tương tác REST bên ngoài  
-- Xác thực & ủy quyền dựa trên **OIDC** thông qua **Amazon Cognito**  
-- Cơ chế *deduplication* tự quản lý bằng DynamoDB thay vì SNS FIFO vì:
-  1. SNS deduplication TTL chỉ 5 phút
-  2. SNS FIFO yêu cầu SQS FIFO
-  3. Chủ động báo cho sender biết message là bản sao
+- Tamper detection & tamper response  
+- Chứng nhận FIPS 140-2/3 Level 3  
 
----
+### Hai dịch vụ HSM của AWS:
 
-## Staging ER7 microservice
+| Dịch vụ | Đặc điểm |
+|--------|----------|
+| AWS KMS | AWS quản lý toàn bộ cụm HSM |
+| AWS CloudHSM | Bạn tự quản lý HSM riêng |
 
-- Lambda “trigger” đăng ký với pub/sub hub, lọc message theo attribute  
-- Step Functions Express Workflow để chuyển ER7 → JSON  
-- Hai Lambda:
-  1. Sửa format ER7 (newline, carriage return)
-  2. Parsing logic  
-- Kết quả hoặc lỗi được đẩy lại vào pub/sub hub
+Cả hai dịch vụ hỗ trợ:
+
+- Tạo khóa  
+- Nhập khóa từ on-premises  
+- Mã hóa trực tiếp hoặc mã hóa theo lớp (envelope encryption)
+
+### Envelope Encryption
+
+Khóa dữ liệu (DEK) mã hóa dữ liệu → DEK được mã hóa lại bằng master key trong HSM → tăng hiệu năng và giảm tải cho HSM.
 
 ---
 
-## Tính năng mới trong giải pháp
+## 2. Quản lý khóa độc lập (Independent key management)
 
-### 1. AWS CloudFormation cross-stack references
-Ví dụ *outputs* trong core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Bạn cần tách biệt:
+
+- Người quản trị khóa  
+- Người truy cập dữ liệu mã hóa  
+
+AWS KMS hỗ trợ:
+
+- IAM policy phân quyền  
+- Audit logs qua AWS CloudTrail  
+
+AWS CloudHSM hỗ trợ cơ chế policy độc lập.
+
+---
+
+# External Key Store (XKS)
+
+Từ năm 2022, AWS KMS hỗ trợ lưu trữ khóa trên HSM của bạn (on-prem hoặc nơi bạn chọn).  
+KMS proxy yêu cầu mã hóa/giải mã đến HSM đó.
+
+Khóa không bao giờ rời HSM của bạn.
+
+Nhưng bạn sẽ chịu trách nhiệm:
+
+- Tính sẵn sàng  
+- Độ trễ  
+- Độ bền  
+
+Nếu mất khóa → mất dữ liệu.
+
+---
+
+# Audit & giám sát
+
+- AWS KMS → CloudTrail  
+- AWS CloudHSM → CloudWatch  
+
+---
+
+# Mã hóa dữ liệu khi lưu trữ và truyền tải
+
+### At rest  
+Dữ liệu được mã hóa bằng AES-256 trong các dịch vụ AWS, với master key lưu trong HSM.
+
+### In transit  
+AWS sử dụng TLS 1.2 hoặc cao hơn; khuyến nghị TLS 1.3.
+
+## s2n-tls
+
+Do hạn chế của OpenSSL, AWS đã phát triển s2n-tls:
+
+- Nhỏ gọn  
+- Dễ audit  
+- Kiểm chứng bằng formal methods  
+- Mã nguồn mở Apache 2.0  
+
+---
+
+# s2n-quic và HTTP/3
+
+AWS phát triển s2n-quic bằng Rust cho giao thức QUIC, nền tảng của HTTP/3.  
+CloudFront hỗ trợ HTTP/3 dựa trên s2n-quic.
+
+---
+
+# Quản lý chứng chỉ số
+
+Hai dịch vụ giúp tự động hóa việc phát hành và xoay vòng certificate:
+
+- AWS Certificate Manager (ACM)  
+- AWS Private CA  
+
+Khóa certificate được bảo vệ bằng KMS hoặc CloudHSM.
+
+---
+
+# Mã hóa dữ liệu khi đang sử dụng (Cryptographic Computing)
+
+Ứng dụng trong:
+
+- Federated learning  
+- Multi-party computation  
+
+AWS Clean Rooms cung cấp tính năng C3R giúp xử lý dữ liệu mã hóa mà không lộ plaintext.
+
+---
+
+# Máy tính lượng tử và mật mã hậu lượng tử (PQC)
+
+Máy tính lượng tử có thể phá vỡ RSA, ECC hoặc Diffie–Hellman.  
+Nhưng AES-256 vẫn an toàn.
+
+### AWS triển khai PQC:
+
+- ML-KEM (chuẩn NIST PQC) tích hợp vào AWS-LC  
+- Hỗ trợ PQC trong s2n-tls, KMS, ACM, Secrets Manager  
+- AWS Transfer Family hỗ trợ PQC SFTP  
+
+---
+
+# Mã hóa mọi thứ, ở mọi nơi
+
+AWS hỗ trợ mã hóa:
+
+- Khi lưu trữ  
+- Khi truyền tải  
+- Trong bộ nhớ  
+
+S3 mã hóa mặc định object mới.  
+EBS dùng envelope encryption.  
+Graviton2/3 hỗ trợ always-on memory encryption.
+
+---
+
+# Tổng kết
+
+AWS:
+
+- Ưu tiên bảo mật hàng đầu  
+- Cung cấp hệ sinh thái mã hóa mạnh mẽ  
+- Hỗ trợ quản lý khóa linh hoạt  
+- Chuẩn bị cho tương lai lượng tử  
+
+Bạn có thể tham khảo thêm qua diễn đàn AWS KMS, AWS CloudHSM hoặc liên hệ AWS Support.
+
+---
+
+## Tác giả
+
+**Ken Beer** – Giám đốc AWS KMS & Cryptography Libraries.  
+**Zach Miller** – Principal Security Specialist Solutions Architect tại AWS.
