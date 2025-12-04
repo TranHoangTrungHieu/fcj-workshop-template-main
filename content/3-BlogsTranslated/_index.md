@@ -5,27 +5,45 @@ weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
+This section provides a list and short introduction to the blogs you have translated.
+---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+### 👉 [Blog 1 – The Importance of Encryption and How AWS Helps](3.1-Blog1/)
 
-This section will list and introduce the blogs you have translated. For example:
+This blog explains the critical role of **encryption** within a defense-in-depth security strategy.  
+Key topics include:
 
-###  [Blog 1 - Getting started with healthcare data lakes: Using microservices](3.1-Blog1/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+- How encryption works and why strong **key management** is essential.  
+- AWS encryption services such as **AWS KMS**, **AWS CloudHSM**, and **External Key Store (XKS)**.  
+- Encryption **at rest**, **in transit**, and **in use** (cryptographic computing).  
+- Post-quantum cryptography readiness and AWS support for **ML-KEM**, **s2n-tls**, and PQC-enabled services.  
+- Default S3 encryption, EBS envelope encryption, and always-on memory encryption on AWS Graviton chips.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+---
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+### 👉 [Blog 2 – Proactive Strategies to Improve Network Resilience & Business Continuity on AWS](3.2-Blog2/)
 
-###  [Blog 4 - ...](3.4-Blog4/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+This blog focuses on building **cybersecurity resilience** and **business continuity** for public sector organizations.  
+Highlights include:
 
-###  [Blog 5 - ...](3.5-Blog5/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+- Applying the **NIST Cybersecurity Framework 2.0**, **AWS Well-Architected Framework**, and **AWS Security Reference Architecture (SRA)**.  
+- Why a **multi-account strategy** is essential, and how to centralize identity using AWS IAM Identity Center.  
+- Building infrastructure using **Infrastructure as Code (IaC)** with CloudFormation, CDK, SAM, or Terraform.  
+- Preparing **recovery accounts**, using consistent AZ IDs, and implementing **multi-Region recovery**.  
+- Creating backup strategies using **AWS Backup**, automated validation, immutable backups, and full workload recovery testing.
 
-###  [Blog 6 - ...](3.6-Blog6/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+---
+
+### 👉 [Blog 3 – Designing Serverless Integration Patterns for Large Language Models (LLMs)](3.3-Blog3/)
+
+This blog explores best-practice patterns for integrating **LLMs** into **serverless architectures**.  
+Key concepts include:
+
+- Calling **Amazon Bedrock** directly from **AWS Lambda**, adjusting timeouts, and using streaming responses.  
+- Implementing **prompt chaining** with **AWS Step Functions** to avoid Lambda’s 15-minute timeout.  
+- Running multiple LLM tasks in parallel to reduce total workflow time by up to 37%.  
+- Implementing **caching** using DynamoDB or ElastiCache to reduce costs and improve performance.  
+- Choosing the right model and optimizing generative AI workflows (including RAG).
+
+---
+
