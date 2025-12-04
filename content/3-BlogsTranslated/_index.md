@@ -8,7 +8,7 @@ pre: " <b> 3. </b> "
 This section provides a list and short introduction to the blogs you have translated.
 ---
 
-### 👉 [Blog 1 – The Importance of Encryption and How AWS Helps](3.1-Blog1/)
+### [Blog 1 – The Importance of Encryption and How AWS Helps](3.1-Blog1/)
 
 This blog explains the critical role of **encryption** within a defense-in-depth security strategy.  
 Key topics include:
@@ -21,7 +21,7 @@ Key topics include:
 
 ---
 
-### 👉 [Blog 2 – Proactive Strategies to Improve Network Resilience & Business Continuity on AWS](3.2-Blog2/)
+### [Blog 2 – Proactive Strategies to Improve Network Resilience & Business Continuity on AWS](3.2-Blog2/)
 
 This blog focuses on building **cybersecurity resilience** and **business continuity** for public sector organizations.  
 Highlights include:
@@ -34,7 +34,7 @@ Highlights include:
 
 ---
 
-### 👉 [Blog 3 – Designing Serverless Integration Patterns for Large Language Models (LLMs)](3.3-Blog3/)
+### [Blog 3 – Designing Serverless Integration Patterns for Large Language Models (LLMs)](3.3-Blog3/)
 
 This blog explores best-practice patterns for integrating **LLMs** into **serverless architectures**.  
 Key concepts include:

@@ -9,7 +9,7 @@ Tại đây là phần liệt kê và giới thiệu ngắn gọn về các blog
 
 ---
 
-### 👉 [Blog 1 – Tầm quan trọng của mã hóa và cách AWS hỗ trợ](3.1-Blog1/)
+### [Blog 1 – Tầm quan trọng của mã hóa và cách AWS hỗ trợ](3.1-Blog1/)
 
 Blog này giải thích vai trò cốt lõi của **mã hóa (encryption)** trong chiến lược bảo mật dạng phòng thủ nhiều lớp (defense-in-depth).  
 Nội dung tập trung vào:
@@ -22,7 +22,7 @@ Nội dung tập trung vào:
 
 ---
 
-### 👉 [Blog 2 – Chiến lược tăng khả năng phục hồi mạng & duy trì hoạt động trên AWS](3.2-Blog2/)
+### [Blog 2 – Chiến lược tăng khả năng phục hồi mạng & duy trì hoạt động trên AWS](3.2-Blog2/)
 
 Blog này tập trung vào **business continuity** và **cybersecurity resilience** cho các tổ chức thuộc khu vực công.  
 Nội dung bao gồm:
@@ -35,7 +35,7 @@ Nội dung bao gồm:
 
 ---
 
-### 👉 [Blog 3 – Thiết kế mô hình tích hợp serverless cho LLMs](3.3-Blog3/)
+### [Blog 3 – Thiết kế mô hình tích hợp serverless cho LLMs](3.3-Blog3/)
 
 Blog này khám phá cách tích hợp **LLMs** vào ứng dụng thông qua kiến trúc **serverless**.  
 Các nội dung chính:
